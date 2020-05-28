@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+     <bean id="beanPostProcessor" class="com.bjsxt.pojo.MyBeanPostProcessor">
+    </bean>
+
+    <bean id="instantiationAwareBeanPostProcessor" class="com.bjsxt.pojo.MyInstantiationAwareBeanPostProcessor">
+    </bean>
+
+    <bean id="beanFactoryPostProcessor" class="com.bjsxt.pojo.MyBeanFactoryPostProcessor" >
+    </bean>
+    <bean id="person" class="com.bjsxt.pojo.Person" init-method="myInit" destroy-method="myDestory" scope="singleton" >
+         <property name="name" >
+          <value>张三</value>
+         </property>
+         <property name="address">
+          <value>广州</value>
+         </property>
+        <property  name="phone"  >
+         	<value>15900000000</value>
+        </property>
+    </bean>
+</beans>
